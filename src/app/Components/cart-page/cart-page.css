@@ -1,0 +1,33 @@
+.cart-container {
+  min-height: 70vh;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cart-info {
+  flex: 1 1 150px;
+  min-width: 0;          /* مهم علشان text-truncate يشتغل جوه flex */
+}
+
+.item-total {
+  min-width: 90px;
+  text-align: end;
+}
+
+@media (max-width: 575.98px) {
+  .cart-img { width: 64px; height: 64px; }
+  .cart-controls { margin-inline-start: 0; }
+  .item-total { margin-inline-start: auto; }
+}

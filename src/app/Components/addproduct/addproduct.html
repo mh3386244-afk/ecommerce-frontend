@@ -1,0 +1,144 @@
+<div class="container-fluid bg-light py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 col-lg-6">
+
+            <h1 class="text-dark fw-bold mb-2">
+                Add a Product
+            </h1>
+
+            <p class="text-secondary mb-4">
+                Fill in the details below. You'll be sent back to the product list once it's saved.
+            </p>
+
+            <div class="card bg-white p-4 shadow-sm border-0">
+
+                <form #loginform="ngForm" (ngSubmit)="Onsubmit(loginform)">
+
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-semibold">
+                            Title
+                        </label>
+
+                        <input
+                            placeholder="Headphone"
+                            type="text"
+                            class="form-control rounded p-3"
+                            required
+                            [(ngModel)]="Model.Tittle"
+                            name="Tittle"
+                            #tittle="ngModel"
+                        >
+
+                        @if (tittle.invalid && tittle.touched) {
+                            <div class="alert alert-danger my-2 rounded">
+                                You must enter text
+                            </div>
+                        }
+                    </div>
+
+
+                    <!-- Price -->
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-semibold">
+                            Price
+                        </label>
+
+                        <input
+                            placeholder="99.9"
+                            type="number"
+                            class="form-control rounded p-3"
+                            required
+                            [(ngModel)]="Model.Price"
+                            name="Price"
+                            #price="ngModel"
+                        >
+
+                        @if (price.invalid && price.touched) {
+                            <div class="alert alert-danger my-2 rounded">
+                                You must enter a number
+                            </div>
+                        }
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-semibold">
+                            Category
+                        </label>
+
+                        <input
+                            placeholder="Electronics"
+                            type="text"
+                            class="form-control rounded p-3"
+                            required
+                            [(ngModel)]="Model.Category"
+                            name="Category"
+                            #category="ngModel"
+                        >
+
+                        @if (category.invalid && category.touched) {
+                            <div class="alert alert-danger my-2 rounded">
+                                You must enter text
+                            </div>
+                        }
+                    </div>
+
+
+                    <!-- Quantity -->
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-semibold">
+                            Quantity
+                        </label>
+
+                        <input
+                            placeholder="10"
+                            type="number"
+                            class="form-control rounded p-3"
+                            required
+                            [(ngModel)]="Model.Quantity"
+                            name="Quantity"
+                            #quantity="ngModel"
+                        >
+
+                        @if (quantity.invalid && quantity.touched) {
+                            <div class="alert alert-danger my-2 rounded">
+                                You must enter a number
+                            </div>
+                        }
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-semibold">
+                            Description (optional)
+                        </label>
+
+                        <textarea
+                            class="form-control rounded p-3"
+                            rows="4">
+                        </textarea>
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="btn btn-warning fw-semibold px-4 py-2 mt-2"
+                        [disabled]="loginform.invalid">
+                        Add Product
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
